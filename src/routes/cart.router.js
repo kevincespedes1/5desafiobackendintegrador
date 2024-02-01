@@ -40,7 +40,6 @@ cartRouter.post('/:cid/product/:pid', async (req, res) => {
             res.status(404).json({ message: "Cart or product not found" });
         }
         const validationProduct = cartByID.products.findIndex((p) => String(p._id) === productID);
-        //const validationProduct = cartByID.products.findIndex(p => p._id === productID);
         console.log(validationProduct);
         if (validationProduct === -1) {
             const newProduct = {
